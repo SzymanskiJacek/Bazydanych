@@ -1,0 +1,13 @@
+mysql>  CREATE TABLE postac(id_postaci INT PRIMARY KEY, nazwa VARCHAR(40) NOT NULL, rodzaj ENUM('wiking', 'ptak', 'kobieta'), data_ur DATE, wiek INT UNSIGNED);
+
+mysql> INSERT INTO postac VALUES('1', 'Bjorn', '1', '1970-10-10', '51');
+
+mysql> INSERT INTO postac VALUES('2', 'Drozd', '2', '2017-02-02', '4');
+
+mysql> INSERT INTO postac VALUES('3', 'Tesciowa', '3', '1951-03-30', '70');
+
+mysql> UPDATE postac SET wiek='88' WHERE nazwa = 'Tesciowa';
+
+mysql> DESC postac;
+
+mysql> SHOW CREATE TABLE postac;
