@@ -1,0 +1,10 @@
+create table walizka(id_walizki int primary key auto_increment, pojemnosc varchar(40) not null, kolor enum('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlasciciela int not null);
+
+alter table walizka add foreign key (id_wlasciciela) references postac (id_postaci);
+
+alter table walizka alter kolor set default 'rozowy';
+
+insert into walizka values('1', '70', 'zolty', '1');
+
+insert into walizka values('2', '35', 'czerwony', '3');
+
