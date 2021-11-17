@@ -1,6 +1,7 @@
-create table walizka(id_walizki int primary key auto_increment, pojemnosc varchar(40) not null, kolor enum('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlasciciela int not null);
+create table walizka(id_walizki int primary key auto_increment, pojemnosc int unsigned, kolor enum('rozowy', 'czerwony', 'teczowy', 'zolty'), id_wlascici
+ela int);
 
-alter table walizka add foreign key (id_wlasciciela) references postac (id_postaci);
+alter table walizka add foreign key (id_wlasciciela) references postac (id_postaci) on delete cascade;
 
 alter table walizka alter kolor set default 'rozowy';
 

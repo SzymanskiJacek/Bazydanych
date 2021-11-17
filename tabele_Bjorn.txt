@@ -1,4 +1,4 @@
-mysql>  CREATE TABLE postac(id_postaci INT PRIMARY KEY, nazwa VARCHAR(40) NOT NULL, rodzaj ENUM('wiking', 'ptak', 'kobieta'), data_ur DATE, wiek INT UNSIGNED);
+mysql>  CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40), rodzaj ENUM('wiking', 'ptak', 'kobieta'), data_ur DATE, wiek INT UNSIGNED);
 
 mysql> INSERT INTO postac VALUES('1', 'Bjorn', '1', '1970-10-10', '51');
 
