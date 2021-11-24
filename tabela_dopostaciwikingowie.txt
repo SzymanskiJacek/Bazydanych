@@ -1,0 +1,41 @@
+insert into postac values('4', 'wiking_1', 'wiking', '1971-11-01', '50');
+
+insert into postac values('5', 'wiking_2', 'wiking', '1972-02-12', '49');
+
+insert into postac values('6', 'wiking_3', 'wiking', '1969-03-30', '52');
+
+insert into postac values('7', 'wiking_4', 'wiking', '1969-04-04', '53');
+
+insert into postac values('8', 'wiking_5', 'wiking', '1971-05-15', '50');
+
+create table statek(nazwa_statku varchar(40) primary key, rodzaj_statku enum('wojenny', 'zwiadowczy', 'lotniskowiec', 'szalupa'), data_wodowania date, max_ladownosc int unsigned);
+
+insert into statek values('lewiatan', 'wojenny', '2021-11-17', '18');
+
+insert into statek values('posejdon', 'zwiadowczy', '2021-10-31', '6');
+
+alter table postac add funkcja int;
+
+update postac set funkcja = 'kapitan' where nazwa = 'Bjorn';
+
+alter table postac add nazwa_statku varchar(40);
+
+alter table postac add foreign key (nazwa_statku) references statek(nazwa_statku);
+
+update postac set nazwa_statku = 'lewiatan' where id_postaci = 1;
+
+update postac set nazwa_statku = 'lewiatan' where id_postaci = 4;
+
+update postac set nazwa_statku = 'lewiatan' where id_postaci = 6;
+
+update postac set nazwa_statku = 'lewiatan' where id_postaci = 8;
+
+update postac set nazwa_statku = 'posejdon' where id_postaci = 7;
+
+update postac set nazwa_statku = 'posejdon' where id_postaci = 5;
+
+update postac set nazwa_statku = 'posejdon' where id_postaci = 2;
+
+delete from izba where nazwa_izby = 'spizarnia';
+
+drop table izba;

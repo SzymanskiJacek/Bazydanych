@@ -1,0 +1,7 @@
+create table przetwory(id_przetworu int primary key, rok_produkcji date default '1654-11-11', id_wykonawcy int, zawartosc varchar(100), dodatek varchar(100) default 'papryczka chilli', id_konsumenta int);
+
+alter table przetwory add foreign key (id_wykonawcy) references postac(id_postaci);
+
+alter table przetwory add foreign key (id_konsumenta) references postac(id_postaci);
+
+insert into przetwory values(1,default, 1, 'bigos i papryczka chilli', default, 3);
