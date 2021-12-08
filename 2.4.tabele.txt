@@ -1,0 +1,5 @@
+insert into postac values (10, 'Waz Loko', null, '1800-08-08', 221, null, null, 8);
+
+CREATE TABLE Marynarz LIKE postac;
+
+insert into Marynarz select * from postac where id_postaci < 10;

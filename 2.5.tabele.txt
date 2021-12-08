@@ -1,0 +1,18 @@
+update postac set nazwa_statku = null;
+
+update Marynarz set nazwa_statku = null;
+
+delete from postac where id_postaci = 8;
+
+delete from statek;
+
+alter table postac drop foreign key postac_ibfk_1;
+
+alter table statek drop primary key;
+
+drop table statek;
+
+create table zwierz(id_zwierza int primary key auto_increment, nazwa varchar(40), wiek int);
+
+insert into zwierz select id_postaci, nazwa, wiek from postac where wiek > 100 or wiek < 30;
+
