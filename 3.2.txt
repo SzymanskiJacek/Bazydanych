@@ -1,0 +1,5 @@
+select * from kreatura where rodzaj != 'wiedzma' and udzwig >= 50;
+
+select * from zasob where waga between 2 and 5;
+
+select * from kreatura where udzwig between 30 and 70 and nazwa like '%a%';

@@ -1,0 +1,10 @@
+select * from zasob where month(dataPozyskania) between 7 and 8;
+
+select * from zasob where rodzaj is not null order by waga;
+
+select * from kreatura order by dataUr limit 5;
+
+
+
+
+

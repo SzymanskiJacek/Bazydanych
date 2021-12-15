@@ -1,0 +1,5 @@
+select distinct rodzaj from zasob;
+
+select concat(nazwa,' - ', rodzaj) from kreatura where rodzaj like "wi%";
+
+select sum(ilosc * waga) as 'calkowita waga', nazwa from zasob where year(datapozyskania) between 2000 and 2007 group by nazwa;
