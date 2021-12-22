@@ -1,0 +1,13 @@
+select nazwa, sum(ilosc) from kreatura join ekwipunek on kreatura.idKreatury = ekwipunek.idKreatury group by nazwa;
+
+select kreatura.nazwa, zasob.nazwa from kreatura join ekwipunek on kreatura.idKreatury =
+ekwipunek.idKreatury join zasob on zasob.idZasobu = ekwipunek.idZasobu;
+
+select kreatura.nazwa, zasob.nazwa from kreatura left join ekwipunek on kreatura.idKreatury = 
+ekwipunek.idKreatury left join zasob on zasob.idZasobu = ekwipunek.idZasobu where zasob.nazwa is null;
+
+
+
+
+
+

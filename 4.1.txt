@@ -1,0 +1,5 @@
+select AVG(waga) from kreatura where rodzaj = 'wiking';
+
+select AVG(waga), COUNT(rodzaj) from kreatura group by rodzaj;
+
+select DISTINCT AVG(2021 - year(dataur)), rodzaj from kreatura group by rodzaj;

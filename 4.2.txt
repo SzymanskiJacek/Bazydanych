@@ -1,0 +1,7 @@
+select rodzaj, SUM(waga) from zasob group by rodzaj;
+
+select nazwa, AVG(waga) from zasob group by nazwa having SUM(ilosc) >= 4 and sum(waga) > 10;
+
+select rodzaj, COUNT(rodzaj) from zasob group by rodzaj having count(rodzaj) > 1;
+
+

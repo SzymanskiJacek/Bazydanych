@@ -1,0 +1,7 @@
+select kreatura.nazwa, zasob.nazwa from kreatura join ekwipunek on kreatura.idKreatury =
+ekwipunek.idKreatury join zasob on zasob.idZasobu = ekwipunek.idZasobu where year(dataur) between 1670 and 1679;
+
+select kreatura.nazwa, zasob.nazwa from kreatura join ekwipunek on kreatura.idKreatury = ekwipunek.idKreatury 
+join zasob on zasob.idZasobu = ekwipunek.idZasobu where zasob.rodzaj = 'jedzenie' order by dataur desc limit 5;
+
+select concat (kreatura.nazwa, ,idkreatury) from kreatura where idkreatury %5 = 1;
