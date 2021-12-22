@@ -1,0 +1,19 @@
+create table szymanskij.kreaturav2 like wikingowie.kreatura;
+
+insert into kreaturav2 select * from wikingowie.kreatura;
+
+create table szymanskij.uczestnicy like wikingowie.uczestnicy;
+
+insert into szymanskij.uczestnicy select * from wikingowie.uczestnicy;
+
+create table szymanskij.etapy_wyprawy like wikingowie.etapy_wyprawy;
+
+insert into szymanskij.etapy_wyprawy select * from wikingowie.etapy_wyprawy;
+
+create table szymanskij.sektor like wikingowie.sektor;
+
+insert into szymanskij.sektor select * from wikingowie.sektor;
+
+create table szymanskij.wyprawa like wikingowie.wyprawa;
+
+insert into szymanskij.wyprawa select * from wikingowie.wyprawa;
