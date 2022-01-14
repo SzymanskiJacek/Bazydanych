@@ -1,0 +1,4 @@
+select kreatura.nazwa, (data_rozpoczecia - dataur) as wiek from kreatura join uczestnicy on 
+kreatura.idkreatury = uczestnicy.id_uczestnika join wyprawa on wyprawa.id_wyprawy = uczestnicy.id_wyprawy 
+join etapy_wyprawy on etapy_wyprawy.idwyprawy = wyprawa.id_wyprawy where etapy_wyprawy.sektor = 7;
+

@@ -1,0 +1,11 @@
+
+select wyprawa.nazwa, count(id_uczestnika), group_concat(kreatura.nazwa) from wyprawa join uczestnicy on 
+wyprawa.id_wyprawy = uczestnicy.id_wyprawy join kreatura on kreatura.idkreatury = uczestnicy.id_uczestnika group by wyprawa.nazwa;
+
+
+
+
+select wyprawa.nazwa as wyprawa, etapy_wyprawy.idetapu, sektor.nazwa as sektor, wyprawa.kierownik from etapy_wyprawy 
+join sektor on etapy_wyprawy.sektor = sektor.id_sektora join wyprawa on wyprawa.id_wyprawy = etapy_wyprawy.idwyprawy 
+order by wyprawa.data_rozpoczecia, etapy_wyprawy.kolejnosc;
+

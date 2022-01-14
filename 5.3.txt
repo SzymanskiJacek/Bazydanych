@@ -1,0 +1,5 @@
+select distinct sektor.nazwa as sektor, count(idetapu) as ilosc_odwiedzin from sektor left join etapy_wyprawy on 
+sektor.id_sektora = etapy_wyprawy.sektor group by sektor.nazwa;
+
+select kreatura.nazwa, if(count(uczestnicy.id_uczestnika>0), 'bral udzial w wyprawie', 'nie bral udzialu w wyprawie') as uczestnictwo
+from kreatura left join uczestnicy on kreatura.idkreatury = uczestnicy.id_uczestnika group by kreatura.nazwa;

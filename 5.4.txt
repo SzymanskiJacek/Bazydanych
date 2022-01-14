@@ -1,0 +1,7 @@
+select wyprawa.nazwa from wyprawa join etapy_wyprawy on wyprawa.id_wyprawy = etapy_wyprawy.idwyprawy group by wyprawa.nazwa 
+having sum(length(etapy_wyprawy.dziennik))<400;
+
+
+select wyprawa.nazwa as wyprawa, sum(zasob.waga * zasob.ilosc)/count(uczestnicy.id_uczestnika) from wyprawa 
+join uczestnicy on wyprawa.id_wyprawy = uczestnicy.id_wyprawy join ekwipunek on uczestnicy.id_uczestnika = ekwipunek.idkreatury 
+join zasob on ekwipunek.idzasobu = zasob.idzasobu group by wyprawa.nazwa;
