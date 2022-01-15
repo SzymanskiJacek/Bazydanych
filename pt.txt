@@ -25,4 +25,44 @@ alter table promotor add idpracownika int auto_increment primary key;
 
 7.
 
+select concat(imie, ' ', nazwisko) as zawodnik from ligapilki.zawodnicy where wzrost>180 order by dataur desc;
+
+select zawodnicy.nazwisko from zawodnicy left join udzial on zawodnicy.idzaw = udzial.idzaw where idmeczu is null;
+
+select kluby.nazwa, kluby.miasto, count(idzaw) from kluby join zawodnicy on kluby.idklubu = zawodnicy.idklubu 
+group by kluby.nazwa, kluby.miasto;
+
+select zawodnicy.imie, zawodnicy.nazwisko from zawodnicy join udzial on zawodnicy.idzaw = udzial.idzaw 
+group by zawodnicy.idzaw order by sum(idmeczu) limit 1;
+
+select zawodnicy.idzaw, zawodnicy.imie, zawodnicy.nazwisko, sum(dominuty - odminuty) as 'czas na boisku w minutach' 
+from zawodnicy join udzial on zawodnicy.idzaw = udzial.idzaw join mecze on mecze.idmeczu = udzial.idmeczu join kluby on 
+kluby.idklubu = zawodnicy.idklubu where kluby.nazwa = 'tecza' group by idzaw;
+
+select zawodnicy.idzaw, zawodnicy.imie, zawodnicy.nazwisko, (wzrost/100) as 'wzrost w metrach' from zawodnicy join udzial 
+on zawodnicy.idzaw = udzial.idzaw where imie like 'Ja%' group by idzaw having count(idmeczu) > 1;
+
+select kluby.nazwa, sum(mecze.golegosc)as 'gole jako gosc' from kluby join mecze on kluby.idklubu = mecze.idgosc 
+group by nazwa limit 1;
+
++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
