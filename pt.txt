@@ -1,3 +1,12 @@
+3.
+
+create table promotor(pesel char(11) primary key not null, tytul enum('mgr', 'dr', 'prof.') default 'prof.', imie varchar(50) 
+not null, nazwisko varchar(50) not null, zarobki double(10,2) unsigned default '2000', dataur date);
+
+create table praca(promotor char(11), nr_indeksu char(6), tytulpracy varchar(50), ocena 
+enum('dst', 'dst plus', 'db', 'db plus', 'bdb') default 'dst', primary key(promotor,nr_indeksu), 
+foreign key(promotor) references promotor(pesel) on delete cascade);
+
 4.
 
 insert into promotor(pesel, tytul, imie, nazwisko) select idkreatury, 'mgr', nazwa, rodzaj from kreatura where idkreatury = 5;
